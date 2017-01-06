@@ -2,7 +2,7 @@ This project contains all the issues we found so far while trying to update our 
 Usage example:
 
 ```
-export MONO_PREFIX=~/unity/lane2/External/MonoBleedingEdge/builds/monodistribution/
+export MONO_PREFIX=~/unity/lane2/External/MonoBleedingEdge/builds/monodistribution
 ```
 
 ```
