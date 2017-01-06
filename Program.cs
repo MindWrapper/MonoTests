@@ -34,6 +34,7 @@ namespace ProcessExitCode
 		private static void GDIPlusTest()
 		{
 			var image = Bitmap.FromFile ("test.bmp");
+			Console.WriteLine("Image loaded");
 		}
 	}
 }
