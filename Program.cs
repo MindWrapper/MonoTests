@@ -13,8 +13,11 @@ namespace ProcessExitCode
 		public static void Main(string[] args)
 		{
 			var monoPrefix = Environment.GetEnvironmentVariable("MONO_PREFIX");
-			Environment.GetEnvironmentVariable(monoPrefix + "/lib" );
-			Console.WriteLine("Mono prefix: " + monoPrefix);
+			Console.WriteLine("-----");
+			Console.WriteLine("MONO_PATH " + Environment.GetEnvironmentVariable("MONO_PATH"));
+			Console.WriteLine("LD_LIBRARY_PATH " + Environment.GetEnvironmentVariable("LD_LIBRARY_PATH"));
+			Console.WriteLine("MONO_CFG_DIR " + Environment.GetEnvironmentVariable("MONO_CFG_DIR"));
+			Console.WriteLine("-----");
 			if (args.Contains("Process"))
 			{
 				ProccessTest();
