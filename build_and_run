@@ -1,0 +1,2 @@
+./build MonoTests.csproj
+./run "$@"
