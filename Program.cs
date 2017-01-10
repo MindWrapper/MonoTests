@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace ProcessExitCode
+namespace MonoTests
 {
 	public class Program
 	{
@@ -36,6 +36,25 @@ namespace ProcessExitCode
 			if (args.Contains("socket"))
 			{
 				SocketTest();
+			}
+
+			if (args.Contains("embedded"))
+			{
+				EmbeddedResourceTest();
+			}
+		}
+
+		private static void EmbeddedResourceTest()
+		{
+			var expectedResourceName = "MonoTests.SomeFolder.Dummy.zip";
+			var manifestResourceNames = typeof(Program).Assembly.GetManifestResourceNames();
+			if (!manifestResourceNames.Contains(expectedResourceName))
+			{
+				Console.WriteLine("FAILURE: Could not find expected resource `{0}`, found resources are:\n\t{1}", expectedResourceName, string.Join("\n\t", manifestResourceNames));
+			}
+			else
+			{
+				Console.WriteLine("SUCCESS: Embedded resource found");
 			}
 		}
 
