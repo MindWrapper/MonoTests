@@ -45,7 +45,7 @@ namespace MonoTests
 
             if (args.Contains("readtoend"))
             {
-                P4ProcessTest();
+                ProcessReadToEnd();
             }
 
             if (args.Contains("print"))
@@ -68,7 +68,7 @@ namespace MonoTests
             }
         }
 
-        private static void P4ProcessTest()
+        private static void ProcessReadToEnd()
         {
             Process process = new Process();
             process.StartInfo.FileName = "MonoTests.exe";
